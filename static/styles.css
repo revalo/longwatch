@@ -1,0 +1,75 @@
+body {
+    width: 100%;
+    font-family: 'Roboto';
+    margin: 0;
+    padding: 0;
+}
+
+[v-cloak] {display: none}
+
+.ui {
+    width: 100%;
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.title {
+    font-family: 'Literata';
+    font-size: 3em;
+}
+
+.description {
+    padding-top: 2rem;
+    font-size: 1.1em;
+}
+
+.button {
+    cursor: pointer;
+    display: inline-block;
+    color: white;
+    background: orange;
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+}
+
+.share-box {
+    text-align: center;
+    font-size: 1.2em;
+    width: 15rem;
+}
+
+.video {
+    text-align: center;
+    padding: 1rem;
+}
+
+.video video {
+    width: 720px;
+}
+
+.github {
+    background-image: url(/static/github.png);
+    width: 2rem;
+    height: 2rem;
+    background-repeat: round;
+    margin: 0 auto;
+    margin-top: 1rem;
+    opacity: 0.3;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.footer {
+    padding-top: 5rem;
+}
+
+.github:hover {
+    opacity: 1;
+}
+
+.footer-text {
+    color: rgb(189, 189, 189);
+    font-size: 0.8em;
+    padding-top: 0.6rem;
+    text-align: center;
+}

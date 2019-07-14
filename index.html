@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LongWatch</title>
+    
+    <link href="https://fonts.googleapis.com/css?family=Literata|Roboto&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="/static/favicon.png" />
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div id="app" v-cloak>
+        <div class="ui">
+            <div class="title">LongWatch</div><br>
+            <div class="description">Watch videos with long distanced loved ones in sync.</div>
+
+            <br><br><br>
+
+            <div class="button" @click="promptFile" v-if="role == 'creator' && peerID == ''">Create Room</div>
+
+            <div class="share" v-if="role == 'creator' && peerID != '' && !localPlaying">
+                Your share link: <br>
+                <input class="share-box" @click="shareBoxClick" type="text" :value="shareURL" readonly>
+                <br><br>
+                Video will start once your partner connects.
+            </div>
+
+            <div class="bug" v-if="role == 'receiver' && !remotePlaying">
+                Loading ... (if it doesn't load in a few seconds, refresh the page.)
+            </div>
+        </div>
+
+        <div class="video">
+            <video id="local" v-if="localPlaying" :src="videoURL" controls></video>
+            <video id="remote" v-if="remotePlaying" controls autoplay></video>
+        </div>
+
+        <input id="file" type="file" accept="video/*" @change="fileChanged" style="display:none">
+
+        <div class="footer">
+            <a href="https://github.com/revalo/longwatch" target="_blank"><div class="github"></div></a>
+            <div class="footer-text">
+                Baked with ❤ by Shreyas
+            </div>
+        </div>
+    </div>
+
+    <script src="//cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="//unpkg.com/peerjs@1.0.0/dist/peerjs.min.js"></script>
+
+    <script src="/js/utils.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>
