@@ -48,7 +48,7 @@ body {
 }
 
 .github {
-    background-image: url(/static/github.png);
+    background-image: url(static/github.png);
     width: 2rem;
     height: 2rem;
     background-repeat: round;
